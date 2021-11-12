@@ -17,6 +17,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   String nama;
+  String iduser;
   final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
   Future<LoginModels> postLogin(String email, String password) async {
     var dio = Dio();
@@ -125,6 +126,7 @@ class _LoginState extends State<Login> {
                                               {
                                                 setState(() {
                                                   nama = value.data.nama;
+                                                  iduser = value.data.iduser;
                                                   Navigator.pushReplacement(
                                                       context,
                                                       new MaterialPageRoute(

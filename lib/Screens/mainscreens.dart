@@ -22,8 +22,11 @@ class _MainScreensState extends State<MainScreens> {
   var dio = Dio();
   List<MotivasiModel> ass = [];
   TextEditingController titleController = TextEditingController();
-  Future<dynamic> sendMotivasi(String isi) async {
-    Map<String, dynamic> body = {"isi_motivasi": isi, "iduser": widget.idUser};
+  Future<dynamic> sendMotivasi(String isiMotivasi) async {
+    Map<String, dynamic> body = {
+      "isi_motivasi": isiMotivasi,
+      "iduser": widget.idUser
+    };
 // [Tambah IDUSER -> Widget.iduser]
     try {
       Response response = await dio.post(
